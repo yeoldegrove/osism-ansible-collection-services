@@ -1,0 +1,18 @@
+---
+##########################
+# operator
+
+operator_user: dragon
+operator_group: "{{ operator_user }}"
+
+##########################
+# ceph_rook
+
+container_registry_ceph_rook_operator: index.docker.io
+ceph_rook_operator_image: "{{ container_registry_ceph_rook_operator }}/rook/ceph"
+ceph_rook_operator_image_tag: "v1.13"
+
+## work directory inside the osism-ansible container:
+ceph_rook_operator_configuration_directory: /tmp/ceph_rook_operator/configuration
+
+ceph_rook_operator_namespace: rook-ceph

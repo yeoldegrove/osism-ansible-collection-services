@@ -1,0 +1,8 @@
+---
+- name: Deploy rook-ceph operator chart
+  kubernetes.core.helm:
+    release_name: rook-ceph
+    chart_ref: rook-release/rook-ceph
+    release_namespace: "{{ ceph_rook_operator_namespace }}"
+    values_files:
+      - "{{ ceph_rook_operator_configuration_directory }}/operator.yml"
